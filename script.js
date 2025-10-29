@@ -11,7 +11,8 @@ buttons.forEach((btn) => {
       display.innerHTML = "";
       localStorage.removeItem("result");
     } else if (value === "=") {
-      display.innerText = eval(display.innerText);
+      const result = eval(display.innerText);
+      display.innerText = Math.round(result * 100) / 100;
       localStorage.setItem("result", display.innerText);
     } else {
       const operators = ["+", "-", "*", "/"];
